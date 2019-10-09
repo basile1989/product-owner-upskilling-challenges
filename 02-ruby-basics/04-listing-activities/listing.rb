@@ -27,25 +27,15 @@ activities = [
     }
   ]
 
-
-puts "#{activities[0]["name"]} [#{activities[0]["category"]}]"
-puts "Located in #{activities[0]["city"]}"
-puts "Duration of #{activities[0]["duration"]} minutes"
-puts "For #{activities[0]["participants"]} participants"
-puts "Charged #{activities[0]["price"]}€"
-
-puts "
----
-
-"
-
-puts "#{activities[1]["name"]} [#{activities[1]["category"]}]"
-puts "Located in #{activities[1]["city"]}"
-puts "Duration of #{activities[1]["duration"]} minutes"
-puts "For #{activities[1]["participants"]} participants"
-puts "Charged #{activities[1]["price"]}€"
+activities.each do |activity|
+puts "#{activity["name"]} [#{activity["category"]}]"
+puts "Located in #{activity["city"]}"
+puts "Duration of #{activity["duration"]} minutes"
+puts "For #{activity["participants"]} participants"
+puts "Charged #{activity["price"]}€"
 
 puts "
 ---
 
 "
+end

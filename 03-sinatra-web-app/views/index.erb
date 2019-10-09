@@ -11,28 +11,35 @@
 </head>
 
 <body>
+<div class="banner" id="top">
+
+		<h1 class="title">Activities for a nice teambuilding</h1>
+		<h2 class="title">Find the bests activities for a good time with your team.</h2>
+		</div>
+
 
   	<div class="container">
-      <h1>Activities for a nice teambuilding</h1>
+
 
       <% @activities.each do |activity| %>
 
 
         <div class="card">
           <h2><%= activity["name"] %></h2>
+          <p id="category"><STRONG><%= activity["category"] %></STRONG></p></br>
           <img src=<%= activity["image"] %> alt="Paris">
-          <p><Strong>Catégorie: </strong><%= activity["category"] %></p>
-          <p><Strong>Ville: </strong><%= activity["city"] %></p>
-          <p><Strong>Temps à prévoir: </strong><%= activity["duration"] %> mins</p>
-          <p><Strong>Nombre de participants: </strong><%= activity["participants"] %> personnes</p>
-          <p><Strong>Prix: </strong><%= activity["price"] %>€</p>
-
+          <ul>
+            <li class="infos"><i class="fas fa-map-marked-alt"></i>   <%= activity["city"] %></li>
+            <li class="infos"><i class="fas fa-stopwatch"></i>   <%= activity["duration"] %> mins</li>
+            <li class="infos"><i class="fas fa-users"></i>   <%= activity["participants"] %> personnes</li>
+            <li class="infos"><i class="fas fa-dollar-sign"></i>   <%= activity["price"] %><strong> €</strong></li>
+          </ul>
         </div>
-
+      <% end %>
 	  </div>
 
 
-  <% end %>
+
 
 </body>
 

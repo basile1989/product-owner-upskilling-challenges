@@ -1,1 +1,95 @@
-/* Add any styling you want */
+h1, h2, h3 {
+    font-family: "Helvetica", sans-serif;
+  }
+  body{
+      background: #F7F9FC;
+      color: #575F7D;
+      font-family: 'Lora', serif;
+      font-size: 19px;
+      font-weight: lighter;
+  }
+  h1, h2, h3 {
+      font-family: 'Roboto', sans-serif;
+  }
+  h1{
+      color: #000873;
+      font-size: 32px;
+      font-weight: 900;
+  }
+  h2{
+      color: #2CAB02;
+      font-size: 20px;
+      font-weight: lighter;
+      font-weight: 500;
+  }
+  a {
+      font-family: 'Roboto', sans-serif;
+      text-decoration: none;
+      color: #6B72E1;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #00EEE5;
+  }
+  .container {
+    width: 700px; /* set the width of your container */
+    margin: 40px auto; /* set margins: top/bottom: 40px; left/right: automatic */
+  }
+  .card-white{
+      background-color: white;
+      padding: 40px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      margin: 20px 0px;
+      text-align: center;
+  }
+  .card-white:hover{
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  #profile-picture{
+      border-radius: 50%;
+      height: 120px;
+  }
+  .link-lucca{
+      background-color: #000873;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 4px;
+      transition: background-color 0.5s ease;
+  }
+  .link-lucca:hover {
+      background-color: #f60;
+      color: white;
+  }
+  .list-inline {
+      list-style: none;
+      padding-left: 0px;
+  }
+  .list-inline li {
+      display: inline;
+      padding: 10px;
+  }
+  .list-inline i {
+      font-size: 40px;
+      color: #E3E3E3;
+  }
+  .list-inline i:hover {
+      color: #f60;
+  }
+  @media (max-width: 960px) {
+    .container {
+      width: 700px;
+    }
+  }
+  @media (max-width: 720px) {
+    .container {
+      width: 500px;
+    }
+  }
+  @media (max-width: 540px) {
+    .container {
+      width: 300px;
+    }
+  }

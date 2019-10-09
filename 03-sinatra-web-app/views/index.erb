@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Team Building - Activities</title>
-    <%= stylesheet '/style.css' %>
-  </head>
-  <body>
-    <h1>Activities</h1>
-    <p>TODO: display all the activities</p>
-  </body>
+	<title>List of activity</title>
+	<meta name="description" content="Activities">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/f554ec71bd.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+
+<body>
+
+  	<div class="container">
+      <h1>Activities for a nice teambuilding</h1>
+
+      <% @activities.each do |activity| %>
+
+
+        <div class="card">
+          <h2><%= activity["name"] %></h2>
+          <img src=<%= activity["image"] %> alt="Paris">
+          <p><Strong>Catégorie: </strong><%= activity["category"] %></p>
+          <p><Strong>Ville: </strong><%= activity["city"] %></p>
+          <p><Strong>Temps à prévoir: </strong><%= activity["duration"] %> mins</p>
+          <p><Strong>Nombre de participants: </strong><%= activity["participants"] %> personnes</p>
+          <p><Strong>Prix: </strong><%= activity["price"] %>€</p>
+
+        </div>
+
+	  </div>
+
+
+  <% end %>
+
+</body>
+
 </html>

@@ -63,6 +63,15 @@ get "/" do
     "participants" => 5,
     "price" => 300,
     "image" => "https://img.grouponcdn.com/deal/e27py5JFcfDuLHZi137xD3qNZCk/e2-700x420/v1/c700x420.jpg"
+    },
+    {
+    "name" => "Apéro",
+    "category" => @categories[0].upcase,
+    "city" => "Marseille",
+    "duration" => 300,
+    "participants" => 1000,
+    "price" => 10000,
+    "image" => "https://www.cherbougetoi.com/wp-content/uploads/2017/04/beerz-apero.jpg"
     }
   ]
 

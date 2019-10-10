@@ -1,6 +1,7 @@
 /* Importing Google fonts */
 @import url("https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:300,400,700");
 @import "./banner.css";
+@import "./test.css";
 
 /* General style rules for fonts and colors */
 .title {

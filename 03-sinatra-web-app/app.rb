@@ -45,6 +45,24 @@ get "/" do
     "participants" => 10,
     "price" => 300,
     "image" => "https://images.caradisiac.com/images/4/5/9/9/174599/S0-test-kartkraft-le-simulateur-de-karting-pour-fanatiques-582283.jpg"
+    },
+    {
+    "name" => "Karaoke",
+    "category" => @categories[4].upcase,
+    "city" => "Tokyo",
+    "duration" => 120,
+    "participants" => 100,
+    "price" => 600,
+    "image" => "http://goolfy-montpellier.com/wp-content/uploads/2018/06/karaoke.jpg"
+    },
+    {
+    "name" => "Pole Dance",
+    "category" => @categories[4].upcase,
+    "city" => "Rennes",
+    "duration" => 60,
+    "participants" => 5,
+    "price" => 300,
+    "image" => "https://img.grouponcdn.com/deal/e27py5JFcfDuLHZi137xD3qNZCk/e2-700x420/v1/c700x420.jpg"
     }
   ]
 

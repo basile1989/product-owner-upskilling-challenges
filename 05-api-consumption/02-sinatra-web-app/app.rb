@@ -68,3 +68,30 @@ get "/activities" do
 
   erb :activity_filtered
 end
+
+get "/activities" do
+
+
+  url = "https://team-building-api.cleverapps.io/v2/activities?search=#{params["name"]}"
+  response = RestClient.get(url)
+  payload = JSON.parse(response.body)
+  @activities = payload["activities"]
+
+  url = "https://team-building-api.cleverapps.io/v2/activities"
+  response = RestClient.get(url)
+  payload = JSON.parse(response.body)
+  list = payload["activities"]
+  categories = []
+  cities = []
+  list.each do |activity|
+    cities = cities + [activity["city"]]
+    categories = categories + [activity["category"]]
+  end
+
+  @city_list = cities.uniq
+  @category_list = categories.uniq
+
+
+
+  erb :activity_filtered
+end

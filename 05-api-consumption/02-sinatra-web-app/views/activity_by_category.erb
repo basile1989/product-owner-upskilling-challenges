@@ -26,12 +26,16 @@
     <div class="filters">
     <% @city_list.each do |city| %>
 
-      <div>
-        <a class="city_filters" href="/activities?city=<%= city %>"><%= city  %></a>
+        <div > <a class="city_filters
+        <%= "city_filters_selected" if params["city"] == city %>"
+        href="/<%= "activities?city=#{city}" if params["city"] != city %>">
+        <%=city%>
+        </a></div>
+
+
+      <%end%>
+
       </div>
-
-
-    <%end%>
 
     </div>
 
@@ -39,7 +43,7 @@
     <% @category_list.each do |category| %>
 
       <div>
-        <a class="category_filters" href="/activities?category=<%= category %>"><%= category  %></a>
+        <a class="category_filters" href=""><%= category  %></a>
       </div>
 
 

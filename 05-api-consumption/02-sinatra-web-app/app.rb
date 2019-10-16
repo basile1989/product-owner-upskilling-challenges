@@ -45,7 +45,7 @@ end
 get "/activities" do
 
 
-  url = "https://team-building-api.cleverapps.io/v2/activities?city=#{params["city"]}"
+  url = "https://team-building-api.cleverapps.io/v2/activities?city=#{params["city"]}&category=#{params["category"]}"
   response = RestClient.get(url)
   payload = JSON.parse(response.body)
   @activities = payload["activities"]
@@ -66,33 +66,5 @@ get "/activities" do
 
 
 
-  erb :activity_by_city
-end
-
-
-get "/activities" do
-
-
-  url = "https://team-building-api.cleverapps.io/v2/activities?category=#{params["category"]}"
-  response = RestClient.get(url)
-  payload = JSON.parse(response.body)
-  @activities = payload["activities"]
-
-  url = "https://team-building-api.cleverapps.io/v2/activities"
-  response = RestClient.get(url)
-  payload = JSON.parse(response.body)
-  list = payload["activities"]
-  categories = []
-  cities = []
-  list.each do |activity|
-    cities = cities + [activity["city"]]
-    categories = categories + [activity["category"]]
-  end
-
-  @city_list = cities.uniq
-  @category_list = categories.uniq
-
-
-
-  erb :activity_by_category
+  erb :activity_filtered
 end

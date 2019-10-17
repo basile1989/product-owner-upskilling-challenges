@@ -60,7 +60,7 @@ namespace "/v2" do
     end
 
     query = [city_query, category_query, name_query].compact.join(" and ")
-    activities = DB.execute("SELECT * FROM activities #{filter} #{query};")
+    activities = DB.execute("SELECT * FROM activities #{filter} #{query} order by name asc;")
     json "activities" => activities
 
 

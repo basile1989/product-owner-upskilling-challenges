@@ -7,50 +7,61 @@
 	<meta charset="utf-8">
 	<script src="https://kit.fontawesome.com/f554ec71bd.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="/style2.css">
-  <link rel="shortcut icon" type="image/png" href="/icon.png"/>
-
-
 
 </head>
 
 <body>
 <div class="banner">
 
-<a href="/wishlists" class="btn-home"><i class="fas fa-praying-hands"></i></a>
+
 
 		<h1 class="title">Activities for a nice teambuilding</h1>
 
 		<h2 class="title">Find the bests activities for a good time with your team.</h2>
 
+
+
 </div>
 
-    <div class="filters">
+
+
+<div class="filters">
     <% @city_list.each do |city| %>
 
-      <div>
-        <a class="city_filters" href="/activities?city=<%= city %>"><%= city  %></a>
+        <div > <a class="city_filters
+        <%= "city_filters_selected" if params["city"] == city %>"
+        href="/<%= "activities?city=#{city}" if params["city"] != city %>">
+        <%=city%>
+        </a> </div>
+      <%end%>
       </div>
 
-
-    <%end%>
-
-    </div>
 
     <div class="filters">
     <% @category_list.each do |category| %>
 
-      <div>
-        <a class="category_filters" href="/activities?category=<%= category %>"><%= category  %></a>
-      </div>
+        <div>
+
+          <a class="category_filters <%= "category_filters_selected" if params["category"] == category  %>"
+          href="/<% if params["city"] == nil %><%= "activities?category=#{category}"%><% elsif params["city"] != nil %><%= "activities?city=#{params["city"]}&category=#{category}"%><%end%>">
+          <%= category  %></a>
 
 
+    </div>
     <%end%>
-   </div>
-    <p class="results"><b><%= @activities.size %></b> activities found.</p>
+    </div>
+    <p class="filter_cancel"><a class="filter_cancel" href="/">remove filters</a></p>
 
-
+    <%if params["city"] == nil%>
+      <p class="results"><b><%= @activities.size %></b> activities for category <b><%= params["category"]%></b>.</p>
+    <% elsif params["category"] == nil %>
+      <p class="results"><b><%= @activities.size %></b> activities found in <b><%= params["city"]%></b>.</p>
+    <% else %>
+      <p class="results"><b><%= @activities.size %></b> activities for <b><%= params["category"]%></b> in <b><%= params["city"]%></b>.</p>
+    <%end%>
 
   	<div class="container">
+
 
       <% @activities.each do |activity| %>
 
